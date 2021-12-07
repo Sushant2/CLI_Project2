@@ -16,7 +16,7 @@
     "url": "https://github.com/Sushant2/CLI_Project2/issues"
   },
   "homepage": "https://github.com/Sushant2/CLI_Project2#readme",
-  "dependencies": {
-    "wcat": "^0.1.1"
+  "bin" :{
+    "wcat" : "index.js"
   }
 }

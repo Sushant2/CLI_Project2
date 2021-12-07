@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // const wcat = require('wcat');
 const fs = require('fs')
 
@@ -16,6 +17,24 @@ for(let i=0;i<inputArr.length;i++){
         optionsArr.push(inputArr[i]);
     }else{
         filesArr.push(inputArr[i]);
+    }
+}
+
+//TODO Dealing with Edge Cases
+
+//? Is Both Present
+let isBoth = optionsArr.includes("-n") && optionsArr.includes("-b")
+if(isBoth){
+    console.log("Either enter -n or -b option");
+    return;
+}
+
+//? Is File Exists
+for(let i=0;i<filesArr.length;i++){
+    let isExists = fs.existsSync(filesArr[i])
+    if(!isExists){
+        console.log(`${filesArr[i]} is not present`);
+        return
     }
 }
 
@@ -74,3 +93,4 @@ if(isB){
 }
 console.log(contentArr.join("\n"));
 
+//! Don' need to do anything for ">" && ">>", as they are inbuilt CLI commands
