@@ -1,0 +1,5 @@
+I am from file 1.txt
+
+
+
+By, file 1 ends here!
